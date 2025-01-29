@@ -1,0 +1,54 @@
+{
+  "name": "whitesource",
+  "version": "0.3.3",
+  "description": "Whitesource Node Module",
+  "preferGlobal": true,
+  "bin": {
+    "whitesource": "./bin/whitesource.js"
+  },
+  "homepage": "https://github.com/whitesource/npm-plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whitesource/npm-plugin.git"
+  },
+  "engines": {
+    "node": ">=5.0"
+  },
+  "main": "./bin/whitesource.js",
+  "keywords": [
+    "whitesource",
+    "npm",
+    "bower"
+  ],
+  "author": "Doron Gour",
+  "contributors": [{
+    "name": "Asaf Savich",
+    "email": "asaf.savich@whitesourcesoftware.com"
+  }],
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  ],
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-cli": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-file-append": "0.0.6",
+    "grunt-lineending": "^0.2.4",
+    "grunt-whitesource": "*"
+  },
+  "dependencies": {
+    "checksum": "0.1.1",
+    "cli": "^0.6.4",
+    "download": "^4.4.3",
+    "glob": "5.0.14",
+    "global-tunnel": "^1.2.0",
+    "npm": "^2.0.2",
+    "prompt": "^0.2.14",
+    "request": "2.61.0",
+    "shelljs": "^0.3.0",
+    "traverse": "^0.6.6"
+  }
+}

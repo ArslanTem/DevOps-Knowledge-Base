@@ -1,0 +1,30 @@
+trigger:
+  branches:
+    include:
+      - main  # Change if your branch is different
+
+pool:
+  vmImage: 'ubuntu-latest'  # Uses a Linux agent
+
+steps:
+- task: UseDotNet@2  # Install .NET SDK
+  inputs:
+    packageType: 'sdk'
+    version: '6.x'  # Change to match your Function's .NET version
+    installationPath: $(Agent.ToolsDirectory)/dotnet
+
+- script: |
+    dotnet build --configuration Release
+    dotnet publish --configuration Release --output $(Build.ArtifactStagingDirectory)
+  displayName: 'Build and Publish Function App'
+
+- task: PublishBuildArtifacts@1  # Upload build output for deployment
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'drop'
+
+- task: AzureFunctionApp@1  # Deploy to Azure Functions
+  inputs:
+    azureSubscription: '<Your Azure Service Connection>'  # Replace with your service connection
+    appName: '<Your Azure Function Name>'  # Replace with your function app name
+    package: '$(Build.ArtifactStagingDirectory)'
