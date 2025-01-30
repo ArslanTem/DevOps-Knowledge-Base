@@ -1,6 +1,6 @@
 # Terraform WebApp Example
 
-This is a simple Terraform configuration for deploying an Azure Web App with an App Service Plan and a Resource Group. The resources will be deployed to Azure using the AzureRM provider.
+This is a Terraform configuration for deploying an Storage account with an App Service Plan and a Resource Group. The resources will be deployed to Azure using the AzureRM provider.
 
 ## Files
 
@@ -18,3 +18,12 @@ This is a simple Terraform configuration for deploying an Azure Web App with an 
 3. **Initialize Terraform**:
    ```bash
    terraform init
+
+4. **Preview deployment**:
+   ```bash
+   terraform init
+
+5. **Deploy to Azure**:
+   ```bash
+   terraform apply -auto-approve
+
